@@ -40,13 +40,12 @@ def handle(msg):
         try:
             comp=command.split()
             c=int(comp[1])
-            indice = comp.index(c)
             if c in reg:
-                bot.sendMessage(chat_id,"Usted es el numero " + indice)
+                bot.sendMessage(chat_id,"Usted es el numero ")
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
+            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
             
     #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Borrar(command):#funcion para borrar un articulo
