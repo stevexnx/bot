@@ -27,7 +27,7 @@ def handle(msg):
             placa=int(datos[1])
             if len(reg)<10:
                 reg.append(placa)
-                bot.sendMessage(chat_id, "Aun hay parqueo disponible")
+                bot.sendMessage(chat_id, "Aun hay tickets disponibles")
                 bot.sendMessage(chat_id, ("entre"))
                 bot.sendMessage(chat_id, reg)
             else:
