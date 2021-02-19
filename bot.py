@@ -25,7 +25,7 @@ def handle(msg):
         try:
             datos=command.split()
             placa=int(datos[1])
-            if len(reg)<10:
+            if len(reg)<40:
                 reg.append(placa)
                 bot.sendMessage(chat_id, "Aun hay tickets disponibles")
                 bot.sendMessage(chat_id, ("entre"))
@@ -42,7 +42,7 @@ def handle(msg):
             c=int(comp[1])
             if c in reg:
                 d = reg.index(c)
-                bot.sendMessage(chat_id,"Usted es el numero "+ d )
+                bot.sendMessage(chat_id,"Usted es el numero "+ placa )
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
