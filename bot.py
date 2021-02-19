@@ -40,8 +40,14 @@ def handle(msg):
         try:
             comp=command.split()
             c=int(comp[1])
+<<<<<<< HEAD
             if c in reg:
                 bot.sendMessage(chat_id,"Usted es el numero ")
+=======
+            if placa in reg:
+               
+                bot.sendMessage(chat_id,"Usted es el numero " )
+>>>>>>> a30de1a6fbb5a7d70e4471f8149447e89e09e0f8
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
