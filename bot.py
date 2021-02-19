@@ -13,7 +13,7 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start():
         try:
-            bot.sendMessage(chat_id,("Bot de tickets"))
+            c,("Bot de tickets"))
             bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
             bot.sendMessage(chat_id,("1) /ingresar (Tu nombre)\nagregarte a la cola"))
             bot.sendMessage(chat_id,("2) /consultar (tu matricula)\nConsultar tu numero de ticket"))
@@ -25,9 +25,9 @@ def handle(msg):
         try:
             datos=command.split()
             placa=int(datos[1])
-            if len(reg)<40:
+            if len(reg)<10:
                 reg.append(placa)
-                bot.sendMessage(chat_id, "Aun hay tickets disponibles")
+                bot.sendMessage(chat_id, "Aun hay parqueo disponible")
                 bot.sendMessage(chat_id, ("entre"))
                 bot.sendMessage(chat_id, reg)
             else:
@@ -40,9 +40,9 @@ def handle(msg):
         try:
             comp=command.split()
             c=int(comp[1])
+            indice = comp.index(c)
             if c in reg:
-               
-                bot.sendMessage(chat_id,"Usted es el numero " + reg.index(placa))
+                bot.sendMessage(chat_id,"Usted es el numero " + indice)
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
