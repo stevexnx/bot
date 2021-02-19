@@ -15,9 +15,9 @@ def handle(msg):
         try:
             bot.sendMessage(chat_id,("Bot de tickets"))
             bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
-            bot.sendMessage(chat_id,("1) /ingresar (placa carro)\nIngresa carro al parqueo"))
-            bot.sendMessage(chat_id,("2) /consultar (placa carrp)\nConsultar si el carro ha entrado al parqueo"))
-            bot.sendMessage(chat_id,("3) /borrar (placa)\nCarro sale del parqueo"))
+            bot.sendMessage(chat_id,("1) /ingresar (Tu nombre)\nagregarte a la cola"))
+            bot.sendMessage(chat_id,("2) /consultar (tu matricula)\nConsultar tu numero de ticket"))
+            bot.sendMessage(chat_id,("3) /borrar (Tu Matricula)\nEliminarte de la cola"))
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
@@ -28,10 +28,10 @@ def handle(msg):
             if len(reg)<10:
                 reg.append(placa)
                 bot.sendMessage(chat_id, "Aun hay parqueo disponible")
-                bot.sendMessage(chat_id, ("Entro el Carro"))
+                bot.sendMessage(chat_id, ("entre"))
                 bot.sendMessage(chat_id, reg)
             else:
-                bot.sendMessage(chat_id ,"ya no hay parqueo")
+                bot.sendMessage(chat_id ,"ya no hay cupo")
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 
@@ -41,9 +41,9 @@ def handle(msg):
             comp=command.split()
             c=int(comp[1])
             if c in reg:
-                bot.sendMessage(chat_id,"El carro si esta en el parqueo")
+                bot.sendMessage(chat_id,"no se encuentra")
             else:
-                bot.sendMessage(chat_id, "El carro no esta en el parqueo\nLe puso llave :D")
+                bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
             
@@ -54,9 +54,9 @@ def handle(msg):
             c=int(comp[1])
             if c in reg:
                 reg.remove(c)
-                bot.sendMessage(chat_id,"El carro ha salido del parqueo")
+                bot.sendMessage(chat_id,"Usted ha salido de la cola")
             else:
-                bot.sendMessage(chat_id, "El carro no esta en el parqueo\nLe puso llave :D")
+                bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
