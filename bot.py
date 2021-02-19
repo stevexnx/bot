@@ -13,7 +13,7 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start():
         try:
-            bot.sendMessage(chat_id,("Bot de Parqueo"))
+            bot.sendMessage(chat_id,("Bot de tickets"))
             bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
             bot.sendMessage(chat_id,("1) /ingresar (placa carro)\nIngresa carro al parqueo"))
             bot.sendMessage(chat_id,("2) /consultar (placa carrp)\nConsultar si el carro ha entrado al parqueo"))
