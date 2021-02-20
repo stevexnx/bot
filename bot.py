@@ -13,11 +13,12 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start():
         try:
-            bot.sendMessage(chat_id,("Bot de tickets"))
+            username = bot.getChat(user_name) 
+            bot.sendMessage(chat_id,("Bienvenido Bot de tickets"))
             bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
-            bot.sendMessage(chat_id,("1) /ingresar ""matrícula"", para agregarte a la cola"))
-            bot.sendMessage(chat_id,("2) /consultar ""matrícula"", para consultar tu numero de ticket"))
-            bot.sendMessage(chat_id,("3) /borrar ""Tu matrícula"", para eliminarte de la lista"))
+            bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula).  Para agregarte a la cola."))
+            bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
+            bot.sendMessage(chat_id,("3) /borrar + (tu matrícula).    Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
@@ -32,7 +33,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id ,"No quedan asientos")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
+            bot.sendMessage(chat_id,"No envie una cadena donde debe ir un entero")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
