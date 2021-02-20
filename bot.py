@@ -14,10 +14,10 @@ def handle(msg):
     def start():
         try:
             bot.sendMessage(chat_id,("Bot de tickets"))
-            bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
-            bot.sendMessage(chat_id,("1) /ingresar (Tu nombre)\nagregarte a la cola"))
-            bot.sendMessage(chat_id,("2) /consultar (tu matricula)\nConsultar tu numero de ticket"))
-            bot.sendMessage(chat_id,("3) /borrar (Tu Matricula)\nEliminarte de la cola"))
+            bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
+            bot.sendMessage(chat_id,("1) /ingresar ""matrícula"", para agregarte a la cola"))
+            bot.sendMessage(chat_id,("2) /consultar ""matrícula"", para consultar tu numero de ticket"))
+            bot.sendMessage(chat_id,("3) /borrar ""Tu matrícula"", para eliminarte de la lista"))
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
@@ -27,13 +27,12 @@ def handle(msg):
             placa=int(datos[1])
             if len(reg)<10:
                 reg.append(placa)
-                bot.sendMessage(chat_id, "Aun hay parqueo disponible")
-                bot.sendMessage(chat_id, ("entre"))
+                bot.sendMessage(chat_id, ("Usted a sido añadido con exito"))
                 bot.sendMessage(chat_id, reg)
             else:
-                bot.sendMessage(chat_id ,"ya no hay cupo")
+                bot.sendMessage(chat_id ,"No quedan asientos")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
+            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
