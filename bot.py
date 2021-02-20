@@ -14,7 +14,7 @@ def handle(msg):
     def start():
         try:
             username = bot.getChat(user_name) 
-            bot.sendMessage(chat_id,("Bienvenido Bot de tickets"))
+            bot.sendMessage(chat_id,("Bienvenido" + username + "Bot de tickets"))
             bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
             bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula).  Para agregarte a la cola."))
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
