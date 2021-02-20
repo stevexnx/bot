@@ -25,7 +25,7 @@ def handle(msg):
         try:
             datos=command.split()
             placa=int(datos[1])
-            if len(reg)<40:
+            if len(reg)<30:
                 reg.append(placa)
                 bot.sendMessage(chat_id, "Aun hay tickets disponibles")
                 bot.sendMessage(chat_id, ("entre"))
