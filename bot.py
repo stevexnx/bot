@@ -20,7 +20,7 @@ def handle(msg):
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
             bot.sendMessage(chat_id,("3) /borrar + (tu matrícula).    Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
+            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Ingresar_Articulo(command):
         try:
