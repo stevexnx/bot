@@ -13,7 +13,7 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start():
         try:
-            c,("Bot de tickets"))
+            ("Bot de tickets"))
             bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
             bot.sendMessage(chat_id,("1) /ingresar (Tu nombre)\nagregarte a la cola"))
             bot.sendMessage(chat_id,("2) /consultar (tu matricula)\nConsultar tu numero de ticket"))
