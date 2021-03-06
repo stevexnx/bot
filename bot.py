@@ -3,7 +3,6 @@ import telepot
 import os
 import time
 import sys
-from pprint import pprint
 
 global reg
 reg=[]
@@ -12,14 +11,6 @@ def handle(msg):
     #registros=[]
     chat_id = msg['chat']['id']
     command = msg['text']
-    pprint(msg)
-    response = bot.getUpdates
-#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def pruebas(command):
-        try:
-            bot.sendmessage(response)
-        except(TypeError, NameError, ValueError):
-             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start(command):
@@ -70,7 +61,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=['pruebas','start','/ingresar','/consultar','/borrar']
+    lista1=['start','/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
@@ -78,9 +69,7 @@ def handle(msg):
             comparacion.append(item)
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     try:
-        if command==("/pruebas"):#Para comprobar imformacion#
-            pruebas(command)#No necesita suministrar informacion#
-        elif command==("/start"):#Para inicar el bot#
+        if command==("/start"):#Para inicar el bot#
             start(command)#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces#
         elif comparacion[0]==("/ingresar"):#Para comprar un ticket#
             Ingresar_Articulo(command)#Solo es posible infresar caracteres numericos#
