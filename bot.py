@@ -19,7 +19,7 @@ def handle(msg):
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
             bot.sendMessage(chat_id,("3) /borrar + (tu matrícula). Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1.")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Ingresar_Articulo(command):
         try:
@@ -32,7 +32,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id ,"No quedan asientos.")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #I1.")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #I1. Si persiste, comuniquese con el administrador.")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
@@ -44,7 +44,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id, "Usted aún no esta registrado.")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #C1.")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #C1. Si persiste, comuniquese con el administrador.")
             
     #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Borrar(command):#funcion para borrar un articulo
@@ -57,7 +57,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado.")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1.")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     lista1=['start','/ingresar','/consultar','/borrar']
     div=command.split()
@@ -76,7 +76,7 @@ def handle(msg):
         elif comparacion[0]==("/borrar"):
             Borrar(command)
     except(IndexError):
-        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. CM.Error."))
+        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. CM.Error. Si persiste, comuniquese con el administrador."))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 
 
