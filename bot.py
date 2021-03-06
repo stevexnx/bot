@@ -76,7 +76,7 @@ def handle(msg):
         elif comparacion[0]==("/borrar"):
             Borrar(command)
     except(IndexError):
-        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. Codigo CM.Error"))
+        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. CM.Error"))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 
 
