@@ -69,7 +69,7 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     try:
         if command==("/start"):#comparo y decido que funcion se ejecutara, para el caso de /start, como no contiene valores de entrada de usuario va directo
-            start()#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces
+            start(command)#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces
         elif comparacion[0]==("/ingresar"):#a esta funcion le envio command porque las cosas llegan por ejemplo
             Ingresar_Articulo(command)#/Ingresar 123(codigo) 25(cantidad) 100(precio) zapatos(nombre)
         elif comparacion[0]==("/consultar"):#para diferenciar eso hago lo del .split()
