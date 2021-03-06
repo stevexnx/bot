@@ -13,7 +13,6 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start(command):
         try:
-            username = bot.getChat(user_id) 
             bot.sendMessage(chat_id,("Bienvenido"))
             bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
             bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula).  Para agregarte a la cola."))
