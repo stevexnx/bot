@@ -15,11 +15,11 @@ def handle(msg):
         try:
             bot.sendMessage(chat_id,("Bienvenido"))
             bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
-            bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula).  Para agregarte a la cola."))
+            bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula). Para agregarte a la cola."))
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
-            bot.sendMessage(chat_id,("3) /borrar + (tu matrícula).    Para eliminarte de la lista."))
+            bot.sendMessage(chat_id,("3) /borrar + (tu matrícula). Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
+            bot.sendMessage(chat_id,"Error, opción no valida.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Ingresar_Articulo(command):
         try:
@@ -32,7 +32,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id ,"No quedan asientos")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde debe ir un entero")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
@@ -44,7 +44,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id, "Usted no esta registrado")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde va un entero")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #C1")
             
     #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Borrar(command):#funcion para borrar un articulo
@@ -53,11 +53,11 @@ def handle(msg):
             c=int(comp[1])
             if c in reg:
                 reg.remove(c)
-                bot.sendMessage(chat_id,"Usted ha salido de la cola")
+                bot.sendMessage(chat_id,"Usted ha sido eliminado satisfactoriamente.")
             else:
-                bot.sendMessage(chat_id, "Usted no esta registrado")
+                bot.sendMessage(chat_id, "Usted no esta registrado.")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     lista1=['start','/ingresar','/consultar','/borrar']
     div=command.split()
@@ -76,7 +76,7 @@ def handle(msg):
         elif comparacion[0]==("/borrar"):
             Borrar(command)
     except(IndexError):
-        bot.sendMessage(chat_id, ("Ingreso una funcion no valida"))
+        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. Codigo CM.Error"))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 
 
