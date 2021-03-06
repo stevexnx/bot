@@ -80,7 +80,7 @@ def handle(msg):
     try:
         if command==("/pruebas"):#Para comprobar imformacion#
             pruebas(command)#No necesita suministrar informacion#
-        if command==("/start"):#Para inicar el bot#
+        elif command==("/start"):#Para inicar el bot#
             start(command)#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces#
         elif comparacion[0]==("/ingresar"):#Para comprar un ticket#
             Ingresar_Articulo(command)#Solo es posible infresar caracteres numericos#
@@ -89,7 +89,7 @@ def handle(msg):
         elif comparacion[0]==("/borrar"):#Para borrar tu compra#
             Borrar(command)#Se debe ingresar la matricula que se quiere borrar#
     except(IndexError):
-        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. CM.Error. Si persiste, comuniquese con el administrador."))
+        bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. #CM.Error. Si persiste, comuniquese con el administrador."))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 
 
