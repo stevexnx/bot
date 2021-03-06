@@ -59,7 +59,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=['/ingresar','/consultar','/borrar']
+    lista1=['start','/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
