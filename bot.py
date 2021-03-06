@@ -19,7 +19,7 @@ def handle(msg):
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
             bot.sendMessage(chat_id,("3) /borrar + (tu matrícula). Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Error, opción no valida.")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Ingresar_Articulo(command):
         try:
@@ -32,7 +32,7 @@ def handle(msg):
             else:
                 bot.sendMessage(chat_id ,"No quedan asientos")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1")
+            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #I1")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
