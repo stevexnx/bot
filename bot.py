@@ -17,7 +17,7 @@ def handle(msg):
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def pruebas(command):
         try:
-            bot.sendmessage(chat_it,response)
+            bot.sendmessage(response)
         except(TypeError, NameError, ValueError):
              bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
 
