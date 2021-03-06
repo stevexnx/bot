@@ -11,7 +11,7 @@ def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def start():
+    def start(command):
         try:
             username = bot.getChat(user_id) 
             bot.sendMessage(chat_id,("Bienvenido" + username + "Bot de tickets"))
