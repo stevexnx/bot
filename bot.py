@@ -2,6 +2,8 @@ import datetime
 import telepot
 import os
 import time
+import sys
+from pprint import pprint
 
 global reg
 reg=[]
@@ -10,6 +12,15 @@ def handle(msg):
     #registros=[]
     chat_id = msg['chat']['id']
     command = msg['text']
+    pprint(msg)
+    response = bot.getUpdates
+#\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
+    def pruebas(command):
+        try:
+            bot.sendmessage(chat_it,response)
+        except(TypeError, NameError, ValueError):
+             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
+
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start(command):
         try:
@@ -59,7 +70,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=['start','/ingresar','/consultar','/borrar']
+    lista1=['pruebas','start','/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
@@ -67,14 +78,16 @@ def handle(msg):
             comparacion.append(item)
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     try:
-        if command==("/start"):#comparo y decido que funcion se ejecutara, para el caso de /start, como no contiene valores de entrada de usuario va directo
-            start(command)#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces
-        elif comparacion[0]==("/ingresar"):#a esta funcion le envio command porque las cosas llegan por ejemplo
-            Ingresar_Articulo(command)#/Ingresar 123(codigo) 25(cantidad) 100(precio) zapatos(nombre)
-        elif comparacion[0]==("/consultar"):#para diferenciar eso hago lo del .split()
-            Consultar_Articulo(command)#haci con todas las funciones similares
-        elif comparacion[0]==("/borrar"):
-            Borrar(command)
+        if command==("/pruebas"):#Para comprobar imformacion#
+            pruebas(command)#No necesita suministrar informacion#
+        if command==("/start"):#Para inicar el bot#
+            start(command)#la funcion tiene los valores de entrada del id de la persona y el objeto bot, para no utilizaro 2 veces#
+        elif comparacion[0]==("/ingresar"):#Para comprar un ticket#
+            Ingresar_Articulo(command)#Solo es posible infresar caracteres numericos#
+        elif comparacion[0]==("/consultar"):#Para consultar si has comprado un ticket#
+            Consultar_Articulo(command)#Se debe ingresar la matricula.
+        elif comparacion[0]==("/borrar"):#Para borrar tu compra#
+            Borrar(command)#Se debe ingresar la matricula que se quiere borrar#
     except(IndexError):
         bot.sendMessage(chat_id, ("Ha habido algún error. \nCodigo. CM.Error. Si persiste, comuniquese con el administrador."))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
