@@ -13,7 +13,7 @@ import sys
             bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
             bot.sendMessage(chat_id,("3) /borrar + (tu matrícula). Para eliminarte de la lista."))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
+            bot.sendMessage("Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def ingresar(command):
         try:
