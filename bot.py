@@ -4,14 +4,6 @@ import os
 import time
 import sys
 
-global reg
-reg=[]
-
-def handle(msg):
-    #registros=[]
-    chat_id = msg['chat']['id']
-    command = msg['text']
-
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def start(command):
         try:
