@@ -61,7 +61,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #B1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=['start','/ingresar','/consultar','/borrar']
+    lista1=['/start','/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
