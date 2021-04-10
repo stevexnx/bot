@@ -60,7 +60,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"Error #04")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=['/ingresar','/consultar','/borrar']
+    lista1=['start','/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
