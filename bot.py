@@ -1,6 +1,4 @@
-import datetime
 import telepot
-import os
 import time
 
 global reg
