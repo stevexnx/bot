@@ -23,7 +23,7 @@ def handle(msg):
         except(TypeError, NameError, ValueError):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #S1. Si persiste, comuniquese con el administrador.")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def Ingresar_Articulo(command):
+    def ingresar(command):
         try:
             datos=command.split()
             placa=int(datos[1])
@@ -37,7 +37,7 @@ def handle(msg):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #I1. Si persiste, comuniquese con el administrador.")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def Consultar_Articulo(command):
+    def consultar(command):
         try:
             comp=command.split()
             c=int(comp[1])
@@ -49,7 +49,7 @@ def handle(msg):
             bot.sendMessage(chat_id,"Ha habido algún error. \nCodigo #C1. Si persiste, comuniquese con el administrador.")
             
     #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def Borrar(command):#funcion para borrar un articulo
+    def borrar(command):#funcion para borrar un articulo
         try:
             comp=command.split()
             c=int(comp[1])
