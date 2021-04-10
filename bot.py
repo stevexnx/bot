@@ -11,16 +11,15 @@ def handle(msg):
     chat_id = msg['chat']['id']
     command = msg['text']
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    def start(command):
+    def start():
         try:
-            username = bot.getChat(user_id) 
-            bot.sendMessage(chat_id,("Bienvenido" + username + "Bot de tickets"))
-            bot.sendMessage(chat_id,("Puedes utilizar los siguientes comandos: \n"))
-            bot.sendMessage(chat_id,("1) /ingresar + (tu matrícula).  Para agregarte a la cola."))
-            bot.sendMessage(chat_id,("2) /consultar + (tu matrícula). Para consultar tu numero de ticket."))
-            bot.sendMessage(chat_id,("3) /borrar + (tu matrícula).    Para eliminarte de la lista."))
+            bot.sendMessage(chat_id,("Bot de tickets"))
+            bot.sendMessage(chat_id,("Puede realizar lo siguiente: \n"))
+            bot.sendMessage(chat_id,("1) /ingresar (placa carro)\nIngresa carro al parqueo"))
+            bot.sendMessage(chat_id,("2) /consultar (placa carrp)\nConsultar si el carro ha entrado al parqueo"))
+            bot.sendMessage(chat_id,("3) /borrar (placa)\nCarro sale del parqueo"))
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Error #01")
+            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Ingresar_Articulo(command):
         try:
@@ -28,12 +27,13 @@ def handle(msg):
             placa=int(datos[1])
             if len(reg)<10:
                 reg.append(placa)
-                bot.sendMessage(chat_id, ("Usted a sido añadido con exito"))
+                bot.sendMessage(chat_id, "Aun hay parqueo disponible")
+                bot.sendMessage(chat_id, ("Entro el Carro"))
                 bot.sendMessage(chat_id, reg)
             else:
-                bot.sendMessage(chat_id ,"No quedan asientos")
+                bot.sendMessage(chat_id ,"ya no hay parqueo")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Error #02")
+            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Consultar_Articulo(command):
@@ -41,11 +41,11 @@ def handle(msg):
             comp=command.split()
             c=int(comp[1])
             if c in reg:
-                bot.sendMessage(chat_id,"Usted esta registrado")
+                bot.sendMessage(chat_id,"El carro si esta en el parqueo")
             else:
-                bot.sendMessage(chat_id, "Usted no esta registrado")
+                bot.sendMessage(chat_id, "El carro no esta en el parqueo\nLe puso llave :D")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Error #02")
+            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
             
     #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
     def Borrar(command):#funcion para borrar un articulo
@@ -54,13 +54,13 @@ def handle(msg):
             c=int(comp[1])
             if c in reg:
                 reg.remove(c)
-                bot.sendMessage(chat_id,"Usted ha salido de la cola")
+                bot.sendMessage(chat_id,"El carro ha salido del parqueo")
             else:
-                bot.sendMessage(chat_id, "Usted no esta registrado")
+                bot.sendMessage(chat_id, "El carro no esta en el parqueo\nLe puso llave :D")
         except(TypeError, NameError, ValueError):
-            bot.sendMessage(chat_id,"Error #04")
+            bot.sendMessage(chat_id,"No envie una cadena donde vaa un entero")
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
-    lista1=["/start","/ingresar","/consultar","/borrar"]
+    lista1=['/ingresar','/consultar','/borrar']
     div=command.split()
     comparacion = []
     for item in lista1:
@@ -77,7 +77,7 @@ def handle(msg):
         elif comparacion[0]==("/borrar"):
             Borrar(command)
     except(IndexError):
-        bot.sendMessage(chat_id, ("Error. Funcion no valida"))
+        bot.sendMessage(chat_id, ("Ingreso una funcion no valida"))
 #\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\#
 
 
